@@ -2,13 +2,15 @@ import React from "react";
 import "./App.css";
 import MyRoutes from "./MyRoutes";
 import Layout from "./features/layout/Layout";
+import { BrowserRouter } from "react-router-dom";
 
 const App: React.VFC = () => {
   return (
-    <Layout>
-      <span>Learn </span>
-      <MyRoutes />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <MyRoutes />
+      </Layout>
+    </BrowserRouter>
   );
 };
 

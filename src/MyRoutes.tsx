@@ -1,23 +1,24 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   RouteProps,
 } from "react-router-dom";
+import Top from "./pages/Top";
 import { Counter } from "./features/counter/Counter";
 
-export const routes: RouteProps[] = [{ path: "/counter", component: Counter }];
+export const routes: RouteProps[] = [
+  { path: "/", component: Top },
+  { path: "/counter", component: Counter },
+];
 
 const MyRoutes: React.FC = (props) => {
   return (
-    <Router>
-      <Switch>
-        {routes.map((r) => (
-          <Route exact {...r} />
-        ))}
-      </Switch>
-    </Router>
+    <Switch>
+      {routes.map((r) => (
+        <Route exact {...r} />
+      ))}
+    </Switch>
   );
 };
 export default MyRoutes;
